@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>REST Basics Control Panel</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>REST Basics</h1>
+      <p class="sub">Your server calls JSONPlaceholder using Axios (GET, POST, PUT, PATCH, DELETE).</p>
+
+      <section class="panel">
+        <h2>1) Get a Post (GET)</h2>
+        <form method="POST" action="/get-post" class="row">
+          <label>
+            Post ID
+            <input name="id" type="number" min="1" placeholder="1" value="{{GET_ID}}" />
+          </label>
+          <button>GET Post</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>2) Create a Post (POST)</h2>
+        <form method="POST" action="/create-post" class="grid">
+          <label>
+            Title
+            <input name="title" placeholder="My new post title" value="{{CREATE_TITLE}}" />
+          </label>
+          <label>
+            Body
+            <textarea name="body" placeholder="Write your post...">{{CREATE_BODY}}</textarea>
+          </label>
+          <button>Create Post</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>3) Replace a Post (PUT)</h2>
+        <form method="POST" action="/replace-post" class="grid">
+          <label>
+            Post ID
+            <input name="id" type="number" min="1" placeholder="1" value="{{PUT_ID}}" />
+          </label>
+          <label>
+            Title (required)
+            <input name="title" placeholder="New full title" value="{{PUT_TITLE}}" />
+          </label>
+          <label>
+            Body (required)
+            <textarea name="body" placeholder="New full body...">{{PUT_BODY}}</textarea>
+          </label>
+          <button>PUT Replace</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>4) Update Part of a Post (PATCH)</h2>
+        <form method="POST" action="/patch-post" class="grid">
+          <label>
+            Post ID
+            <input name="id" type="number" min="1" placeholder="1" value="{{PATCH_ID}}" />
+          </label>
+          <label>
+            Title (optional)
+            <input name="title" placeholder="Only update title..." value="{{PATCH_TITLE}}" />
+          </label>
+          <label>
+            Body (optional)
+            <textarea name="body" placeholder="Only update body...">{{PATCH_BODY}}</textarea>
+          </label>
+          <button>PATCH Update</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>5) Delete a Post (DELETE)</h2>
+        <form method="POST" action="/delete-post" class="row">
+          <label>
+            Post ID
+            <input name="id" type="number" min="1" placeholder="1" value="{{DELETE_ID}}" />
+          </label>
+          <button class="danger">DELETE Post</button>
+        </form>
+      </section>
+
+      <section class="result">
+        <h2>Result</h2>
+        <p class="message">{{MESSAGE}}</p>
+        {{CARD}}
+      </section>
+
+      <footer class="footer">
+        <small>JSONPlaceholder is a teaching API. It acts real, but doesn't permanently save changes.</small>
+      </footer>
+    </main>
+  </body>
+</html>
